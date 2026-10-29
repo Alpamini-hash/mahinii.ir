@@ -178,3 +178,42 @@ th{background:var(--graphite);color:#fff;font-family:var(--head);font-weight:700
 .hero figure.done .readout small{color:#fff}
 @media (prefers-reduced-motion:reduce){.hero figure img{transition:none}}
 @media(max-width:900px){.readout{top:12px;inset-inline-end:12px;min-width:140px;padding:8px 12px}.readout b{font-size:1.8rem}}
+
+/* crucible-making step animation */
+.steps-anim{margin:22px 0 26px;background:var(--graphite);border-radius:6px;overflow:hidden;max-width:760px}
+.steps-anim svg{display:block;width:100%;height:auto}
+.steps-anim text{fill:#C9D3DA;font:15px var(--body);text-anchor:middle}
+.steps-anim .deg{fill:var(--heat);font:700 18px var(--head)}
+.sc{opacity:0;transition:opacity .5s}
+.sc.on{opacity:1}
+.cru{fill:#8d7a66}.cav{fill:#1F2A33}
+.sc.on .grain{animation:fall 1.4s ease-in infinite}
+@keyframes fall{from{transform:translateY(-40px);opacity:0}30%{opacity:1}to{transform:translateY(80px);opacity:0}}
+.paddle{transform-origin:320px 165px}
+.sc.on .paddle{animation:stir 1.6s ease-in-out infinite alternate}
+@keyframes stir{from{transform:rotate(-18deg)}to{transform:rotate(18deg)}}
+.sc.on .ram{animation:press 1.6s ease-in-out infinite}
+@keyframes press{0%,100%{transform:translateY(0)}50%{transform:translateY(80px)}}
+.dry .cru{transition:fill 2.6s}
+.sc.on .dry .cru{fill:#d8cdbd}
+.sc.on .vapor path{animation:rise 2s ease-out infinite}
+.vapor path:nth-child(2){animation-delay:.5s!important}.vapor path:nth-child(3){animation-delay:1s!important}
+@keyframes rise{from{transform:translateY(20px);opacity:0}40%{opacity:1}to{transform:translateY(-30px);opacity:0}}
+.glow{fill:#2a1a14;transition:fill 2.8s}
+.sc.on .glow{fill:#f0802a}
+.fire .cru{fill:#b5a189;transition:fill 2.8s}.fire .cav{fill:#3a2a20}
+.sc.on .fire .cru{fill:#ffb366}
+.sc.on .gloss{animation:sweep 1.8s ease-in-out infinite}
+@keyframes sweep{from{transform:skewX(-20deg) translateX(0)}to{transform:skewX(-20deg) translateX(260px)}}
+.check{stroke-dasharray:70;stroke-dashoffset:70}
+.sc.on .check{transition:stroke-dashoffset .7s .3s;stroke-dashoffset:0}
+.steps-anim figcaption{color:#fff;padding:12px 18px 0;font-family:var(--head)}
+.sa-ctrl{display:flex;gap:12px;align-items:flex-start;justify-content:space-between;padding:12px 18px 18px}
+.sa-steps{display:flex;flex-wrap:wrap;gap:6px}
+.sa-steps button{font:.82rem var(--body);color:#C9D3DA;background:transparent;border:1px solid #3a4752;border-radius:4px;padding:4px 10px;cursor:pointer}
+.sa-steps button span{color:#9AA7B1;margin-inline-end:6px}
+.sa-steps button.past{border-color:#5B6873}
+.sa-steps button[aria-selected="true"]{background:var(--heat);border-color:var(--heat);color:var(--graphite)}
+.sa-steps button[aria-selected="true"] span{color:var(--graphite)}
+.sa-play{font:600 .85rem var(--head);background:#fff;color:var(--graphite);border:0;border-radius:4px;padding:6px 14px;cursor:pointer;flex:none}
+@media (prefers-reduced-motion:reduce){.sc *{animation:none!important}}
