@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>کارگاه ماهینی | بوته سرامیکی، کوره، قالب سیلیکونی</title>
+<meta name="description" content="کارگاه ماهینی: ساخت و فروش بوته سرامیکی، انواع کوره، قالب سیلیکونی ریخته‌گری و سازه‌های طلق (پلکسی). سفارش آنلاین و دوره‌های آموزشی حضوری و آنلاین.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --coal:#1c1714; --coal-2:#2a221d; --ember:#e2622b; --ember-2:#f39a3d;
+    --clay:#f6efe6; --clay-2:#ece1d3; --ink:#2b2420; --muted:#7a6c62; --line:#e0d4c5;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Vazirmatn",Tahoma,sans-serif;background:var(--clay);color:var(--ink);line-height:1.9;font-size:16px}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+  /* header */
+  header{position:sticky;top:0;z-index:20;background:rgba(28,23,20,.92);backdrop-filter:blur(8px);color:var(--clay)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:1.15rem}
+  .brand .flame{width:34px;height:34px;border-radius:10px;background:linear-gradient(160deg,var(--ember-2),var(--ember));display:grid;place-items:center}
+  .menu{display:flex;gap:22px;font-size:.95rem}
+  .menu a{opacity:.85}.menu a:hover{opacity:1;color:var(--ember-2)}
+  .call-btn{background:var(--ember);color:#fff;padding:8px 16px;border-radius:999px;font-weight:700;font-size:.9rem;white-space:nowrap}
+  @media(max-width:760px){.menu{display:none}}
+
+  /* hero */
+  .hero{background:radial-gradient(ellipse at 20% 110%,rgba(226,98,43,.55),transparent 55%),linear-gradient(180deg,var(--coal),var(--coal-2));color:var(--clay);padding:90px 0 110px;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+  .eyebrow{color:var(--ember-2);font-weight:700;letter-spacing:.5px;margin-bottom:12px}
+  .hero h1{font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.35;font-weight:900;margin-bottom:18px}
+  .hero p{opacity:.85;max-width:520px;margin-bottom:30px}
+  .btns{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:12px;font-weight:700;border:0;cursor:pointer;font-family:inherit;font-size:1rem}
+  .btn-ember{background:linear-gradient(160deg,var(--ember-2),var(--ember));color:#fff}
+  .btn-ghost{background:transparent;color:var(--clay);border:1.5px solid rgba(246,239,230,.35)}
+  .btn-dark{background:var(--coal);color:var(--clay)}
+  .kiln-art{justify-self:center;width:min(360px,80vw)}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr}.kiln-art{order:-1;width:220px}}
+
+  /* sections */
+  section{padding:84px 0}
+  .sec-head{text-align:center;margin-bottom:44px}
+  .sec-head h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900}
+  .sec-head p{color:var(--muted);max-width:600px;margin:8px auto 0}
+
+  /* products */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+  .card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(60,40,20,.1)}
+  .media{position:relative;aspect-ratio:4/3;background:linear-gradient(150deg,var(--clay-2),#e3d2bd);display:grid;place-items:center}
+  .media svg{width:72px;height:72px;opacity:.75}
+  .media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .4s}
+  .media img.ok{opacity:1}
+  .card-body{padding:18px 20px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .card h3{font-size:1.15rem;font-weight:800}
+  .card p{color:var(--muted);font-size:.93rem;flex:1}
+  .card .link{color:var(--ember);font-weight:700;font-size:.92rem;cursor:pointer;background:none;border:0;font-family:inherit;text-align:right;padding:0}
+
+  /* courses */
+  .courses{background:var(--coal);color:var(--clay)}
+  .courses .sec-head p{color:rgba(246,239,230,.7)}
+  .c-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+  .c-card{background:var(--coal-2);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:30px}
+  .c-card .tag{display:inline-block;background:rgba(226,98,43,.18);color:var(--ember-2);padding:3px 12px;border-radius:999px;font-size:.85rem;font-weight:700;margin-bottom:12px}
+  .c-card h3{font-size:1.35rem;font-weight:900;margin-bottom:10px}
+  .c-card ul{list-style:none;margin:14px 0 24px;display:grid;gap:6px}
+  .c-card li::before{content:"◆";color:var(--ember);margin-left:8px;font-size:.7rem}
+  .topics{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:34px}
+  .topics span{border:1px solid rgba(246,239,230,.2);padding:5px 14px;border-radius:999px;font-size:.9rem}
+
+  /* order */
+  .order-box{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:34px}
+  @media(max-width:860px){.order-box{grid-template-columns:1fr;padding:22px}}
+  .steps{display:grid;gap:18px;align-content:start}
+  .step{display:flex;gap:14px}
+  .step b{flex:none;width:34px;height:34px;border-radius:50%;background:var(--clay-2);color:var(--ember);display:grid;place-items:center;font-weight:900}
+  form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .full{grid-column:1/-1}
+  label{font-size:.88rem;font-weight:700;display:block;margin-bottom:5px}
+  input,select,textarea{width:100%;font-family:inherit;font-size:1rem;padding:11px 13px;border:1.5px solid var(--line);border-radius:10px;background:var(--clay);color:var(--ink)}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--ember);background:#fff}
+  textarea{min-height:110px;resize:vertical}
+  .seg{display:flex;gap:8px}
+  .seg label{flex:1;margin:0;cursor:pointer}
+  .seg input{display:none}
+  .seg span{display:block;text-align:center;padding:10px;border:1.5px solid var(--line);border-radius:10px;font-weight:700;background:var(--clay)}
+  .seg input:checked+span{border-color:var(--ember);background:rgba(226,98,43,.08);color:var(--ember)}
+  .err{color:#c0392b;font-size:.88rem;min-height:1.2em}
+  .call-box{background:var(--clay);border-radius:16px;padding:28px;text-align:center;display:flex;flex-direction:column;gap:6px;justify-content:center}
+  .phone-big{font-size:clamp(1.7rem,4vw,2.3rem);font-weight:900;direction:ltr;color:var(--ink);margin:4px 0 12px;letter-spacing:1px}
+  .result{display:none;grid-column:1/-1;background:var(--clay);border:1.5px dashed var(--ember);border-radius:14px;padding:18px}
+  .result.show{display:block}
+  .result pre{white-space:pre-wrap;font-family:inherit;font-size:.92rem;background:#fff;border-radius:10px;padding:12px;margin:10px 0;border:1px solid var(--line)}
+  .r-btns{display:flex;gap:10px;flex-wrap:wrap}
+  .r-btns .btn{padding:10px 18px;font-size:.93rem}
+  .btn-wa{background:#1fa855;color:#fff}
+
+  /* about + contact */
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  @media(max-width:860px){.about{grid-template-columns:1fr}}
+  .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center}
+  .stat b{display:block;font-size:1.05rem;font-weight:900;color:var(--ember)}
+  .stat span{color:var(--muted);font-size:.9rem}
+  .contact{background:linear-gradient(160deg,var(--ember-2),var(--ember));color:#fff;border-radius:22px;padding:44px;text-align:center}
+  .contact h2{font-weight:900;font-size:1.8rem}
+  .phone{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:900;direction:ltr;display:inline-block;margin:10px 0 20px;letter-spacing:1px}
+  .contact .btn{background:#fff;color:var(--ember)}
+  footer{background:var(--coal);color:rgba(246,239,230,.6);text-align:center;padding:26px 0;font-size:.88rem;margin-top:84px}
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(120px);background:var(--coal);color:#fff;padding:10px 22px;border-radius:999px;transition:transform .3s;z-index:50}
+  .toast.show{transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <span class="flame"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M12 2s5 5 5 10a5 5 0 0 1-10 0c0-2 1-3.5 1-3.5S9 11 11 11c0-4 1-9 1-9z"/></svg></span>
+      کارگاه ماهینی
+    </a>
+    <nav class="menu">
+      <a href="#products">محصولات</a>
+      <a href="#order">نحوه سفارش</a>
+      <a href="#courses">دوره‌های آموزشی</a>
+      <a href="#about">درباره ما</a>
+      <a href="#contact">تماس</a>
+    </nav>
+    <a href="tel:+989141005416" class="call-btn">۰۹۱۴۱۰۰۵۴۱۶</a>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">ساخت، فروش و آموزش</div>
+      <h1>بوته سرامیکی، کوره و قالب سیلیکونی<br>با کیفیت کارگاهی</h1>
+      <p>ساخت سفارشی بوته‌های سرامیکی، انواع کوره، قالب‌های سیلیکونی ریخته‌گری و سازه‌های طلق مثل ورودی و تابلو. برای سفارش تماس بگیرید یا در دوره‌های آموزشی ما شرکت کنید.</p>
+      <div class="btns">
+        <a href="tel:+989141005416" class="btn btn-ember">تماس برای سفارش</a>
+        <a href="#courses" class="btn btn-ghost">دوره‌های آموزشی</a>
+      </div>
+    </div>
+    <svg class="kiln-art" viewBox="0 0 300 300" aria-hidden="true">
+      <defs>
+        <radialGradient id="g" cx="50%" cy="60%" r="50%"><stop offset="0" stop-color="#ffd27a"/><stop offset=".5" stop-color="#f39a3d"/><stop offset="1" stop-color="#e2622b"/></radialGradient>
+      </defs>
+      <rect x="40" y="50" width="220" height="210" rx="22" fill="#3a2f28" stroke="#5a4a3e" stroke-width="3"/>
+      <rect x="70" y="85" width="160" height="130" rx="14" fill="#140f0c"/>
+      <rect x="70" y="85" width="160" height="130" rx="14" fill="url(#g)" opacity=".9"/>
+      <path d="M120 200 h60 l-8 -50 h-44z" fill="#d9c7b2" stroke="#8a6f58" stroke-width="2"/>
+      <ellipse cx="150" cy="150" rx="22" ry="5" fill="#fff3c4"/>
+      <circle cx="80" cy="238" r="7" fill="#e2622b"/><circle cx="104" cy="238" r="7" fill="#5a4a3e"/>
+      <rect x="180" y="232" width="56" height="12" rx="6" fill="#5a4a3e"/>
+      <rect x="60" y="260" width="20" height="18" fill="#3a2f28"/><rect x="220" y="260" width="20" height="18" fill="#3a2f28"/>
+    </svg>
+  </div>
+</div>
+
+<section id="products">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>محصولات و خدمات</h2>
+      <p>همه‌ی محصولات در کارگاه خودمان و بر اساس سفارش شما ساخته می‌شوند.</p>
+    </div>
+    <div class="grid" id="productGrid"></div>
+  </div>
+</section>
+
+<section class="courses" id="courses">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>دوره‌های آموزشی</h2>
+      <p>آموزش عملی ساخت، از صفر تا ساخت اولین محصول. دوره‌ها به‌صورت زنده برگزار می‌شوند.</p>
+    </div>
+    <div class="c-grid">
+      <div class="c-card">
+        <span class="tag">حضوری</span>
+        <h3>آموزش حضوری در کارگاه</h3>
+        <p>کار عملی کنار استادکار، با ابزار و مواد کارگاه.</p>
+        <ul>
+          <li>کار عملی با ابزار و مواد کارگاه</li>
+          <li>گروه‌های کوچک یا آموزش خصوصی</li>
+          <li>رفع اشکال روی کار خودتان</li>
+        </ul>
+        <button class="btn btn-ember" data-course="حضوری در کارگاه">ثبت‌نام دوره حضوری</button>
+      </div>
+      <div class="c-card">
+        <span class="tag">آنلاین زنده</span>
+        <h3>کلاس آنلاین</h3>
+        <p>برای کسانی که دور هستند؛ کلاس زنده با امکان پرسش و پاسخ.</p>
+        <ul>
+          <li>کلاس زنده، نه ویدیوی ضبط‌شده</li>
+          <li>معرفی مواد، ابزار و منابع خرید</li>
+          <li>پرسش و پاسخ در طول دوره</li>
+        </ul>
+        <button class="btn btn-ember" data-course="آنلاین زنده">ثبت‌نام دوره آنلاین</button>
+      </div>
+    </div>
+    <div class="topics">
+      <span>ساخت بوته سرامیکی</span><span>ساخت کوره</span><span>قالب‌گیری سیلیکونی</span><span>ریخته‌گری</span><span>کار با طلق و پلکسی</span>
+    </div>
+  </div>
+</section>
+
+<section id="order">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>نحوه سفارش</h2>
+      <p>برای سفارش محصول یا ثبت‌نام دوره با ما تماس بگیرید. پرداخت آنلاین نداریم؛ قیمت، پرداخت و زمان تحویل تلفنی هماهنگ می‌شود.</p>
+    </div>
+    <div class="order-box">
+      <div class="steps">
+        <div class="step"><b>۱</b><div><strong>تماس بگیرید</strong><br><span style="color:var(--muted)">با شماره‌ی ۰۹۱۴۱۰۰۵۴۱۶</span></div></div>
+        <div class="step"><b>۲</b><div><strong>نیازتان را بگویید</strong><br><span style="color:var(--muted)">محصول یا دوره، تعداد، ابعاد، حداکثر دما، نوع فلز یا طرح تابلو</span></div></div>
+        <div class="step"><b>۳</b><div><strong>قیمت و زمان تحویل</strong><br><span style="color:var(--muted)">قیمت، نحوه‌ی پرداخت و ارسال تلفنی نهایی می‌شود</span></div></div>
+      </div>
+      <div class="call-box">
+        <div style="color:var(--muted);font-weight:700">سفارش و ثبت‌نام فقط تلفنی</div>
+        <a href="tel:+989141005416" class="phone-big">0914 100 5416</a>
+        <a href="tel:+989141005416" class="btn btn-ember" style="justify-content:center;font-size:1.1rem">تماس برای سفارش</a>
+        <p style="color:var(--muted);font-size:.9rem;margin-top:14px" id="pickedNote">برای چه چیزی تماس می‌گیرید؟ هنگام تماس نام محصول یا دوره را بگویید.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" style="padding-top:0">
+  <div class="wrap about">
+    <div>
+      <h2 style="font-size:2rem;font-weight:900;margin-bottom:12px">درباره کارگاه</h2>
+      <p style="color:var(--muted)">کارگاه ماهینی سال‌هاست در زمینه‌ی ساخت بوته‌های سرامیکی، کوره‌های ذوب و پخت، قالب‌های سیلیکونی ریخته‌گری و سازه‌های طلق فعالیت می‌کند. هر محصول بر اساس نیاز مشتری طراحی و ساخته می‌شود و تجربه‌ی سال‌ها کار عملی را در دوره‌های آموزشی به علاقه‌مندان منتقل می‌کنیم.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>ساخت سفارشی</b><span>ابعاد و مشخصات دلخواه</span></div>
+      <div class="stat"><b>ارسال به سراسر ایران</b><span>بسته‌بندی ایمن</span></div>
+      <div class="stat"><b>آموزش عملی</b><span>حضوری و آنلاین</span></div>
+      <div class="stat"><b>مشاوره رایگان</b><span>قبل از سفارش</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="padding-top:0;padding-bottom:0">
+  <div class="wrap">
+    <div class="contact">
+      <h2>سؤال دارید؟ تماس بگیرید</h2>
+      <a href="tel:+989141005416" class="phone">0914 100 5416</a>
+      <div class="btns" style="justify-content:center">
+        <a href="https://wa.me/989141005416" target="_blank" rel="noopener" class="btn">واتساپ</a>
+        <a href="tel:+989141005416" class="btn">تماس تلفنی</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© <span id="yr"></span> کارگاه ماهینی — mahinii.ir</footer>
+<div class="toast" id="toast"></div>
+
+<script>
+const PHONE_INTL = "989141005416";
+const PHONE_LOCAL = "09141005416";
+
+const icons = {
+  crucible:'<svg viewBox="0 0 64 64" fill="none" stroke="#8a5a3a" stroke-width="3" stroke-linejoin="round"><path d="M14 16h36l-5 38H19z"/><path d="M10 16h44"/><path d="M22 28h20" opacity=".5"/></svg>',
+  kiln:'<svg viewBox="0 0 64 64" fill="none" stroke="#8a5a3a" stroke-width="3" stroke-linejoin="round"><rect x="10" y="10" width="44" height="44" rx="6"/><rect x="18" y="18" width="28" height="22" rx="3"/><circle cx="20" cy="48" r="2"/><path d="M34 48h12"/></svg>',
+  mold:'<svg viewBox="0 0 64 64" fill="none" stroke="#8a5a3a" stroke-width="3" stroke-linejoin="round"><path d="M8 24l24-12 24 12-24 12z"/><path d="M8 24v16l24 12 24-12V24"/><path d="M32 36v16"/></svg>',
+  sign:'<svg viewBox="0 0 64 64" fill="none" stroke="#8a5a3a" stroke-width="3" stroke-linejoin="round"><rect x="8" y="14" width="48" height="26" rx="4"/><path d="M20 40v14M44 40v14M16 27h32"/></svg>'
+};
+
+const products = [
+  {id:"crucible", name:"بوته سرامیکی", img:"images/crucible.jpg", desc:"بوته‌ی نسوز برای ذوب طلا، نقره، مس، آلومینیوم و سایر فلزات، در اندازه‌های مختلف."},
+  {id:"kiln", name:"انواع کوره", img:"images/kiln.jpg", desc:"کوره‌ی ذوب فلز، کوره‌ی پخت سرامیک و کوره‌های سفارشی متناسب با کار شما."},
+  {id:"mold", name:"قالب سیلیکونی", img:"images/mold.jpg", desc:"قالب سیلیکونی برای ریخته‌گری رزین، گچ، بتن، شمع و فلزات کم‌ذوب."},
+  {id:"sign", name:"سازه‌های طلق و تابلو", img:"images/sign.jpg", desc:"ساخت ورودی، تابلو، استند و سازه‌های طلق (پلکسی) با طرح دلخواه."}
+];
+
+const grid = document.getElementById("productGrid");
+products.forEach(p=>{
+  grid.insertAdjacentHTML("beforeend",`
+    <article class="card">
+      <div class="media">${icons[p.id]}<img src="${p.img}" alt="${p.name}" loading="lazy" onload="this.classList.add('ok')" onerror="this.remove()"></div>
+      <div class="card-body"><h3>${p.name}</h3><p>${p.desc}</p>
+      <button class="link" data-product="${p.name}">تماس برای سفارش ←</button></div>
+    </article>`);
+});
+
+const note = document.getElementById("pickedNote");
+document.addEventListener("click",e=>{
+  const p = e.target.closest("[data-product]"), c = e.target.closest("[data-course]");
+  if(!p && !c) return;
+  note.innerHTML = p ? `برای سفارش <strong>${p.dataset.product}</strong> تماس بگیرید.` : `برای ثبت‌نام دوره‌ی <strong>${c.dataset.course}</strong> تماس بگیرید.`;
+  document.getElementById("order").scrollIntoView({behavior:"smooth"});
+});
+function toast(t){const el=document.getElementById("toast");el.textContent=t;el.classList.add("show");setTimeout(()=>el.classList.remove("show"),2200);}
+document.getElementById("yr").textContent = new Intl.DateTimeFormat("fa-IR",{year:"numeric"}).format(new Date());
+</script>
+</body>
+</html>
