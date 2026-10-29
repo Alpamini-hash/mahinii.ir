@@ -165,3 +165,16 @@ th,td{border:1px solid var(--rule);padding:10px 12px;text-align:right;vertical-a
 th{background:var(--graphite);color:#fff;font-family:var(--head);font-weight:700}
 .note{background:var(--white);border-inline-start:4px solid var(--heat);padding:16px 20px;margin:20px 0;max-width:68ch}
 @media(max-width:860px){.article{grid-template-columns:1fr}.toc{position:static}}
+
+/* hero heat-up animation */
+.hero figure img{filter:brightness(.32) saturate(.15) contrast(1.1);transition:filter 3.9s cubic-bezier(.33,0,.2,1) .3s}
+.hero figure.hot img{filter:none}
+.readout{position:absolute;top:24px;inset-inline-end:24px;background:rgba(20,26,31,.88);border:1px solid rgba(255,255,255,.14);border-radius:6px;padding:10px 16px 12px;color:#fff;min-width:170px;text-align:left;direction:rtl}
+.readout span{display:block;font-size:.78rem;color:#9AA7B1;text-align:right}
+.readout b{font-family:var(--head);font-size:2.4rem;line-height:1.2;color:#ff5a3c;font-variant-numeric:tabular-nums;transition:color .6s}
+.readout em{font-style:normal;color:#9AA7B1;margin-inline-start:4px}
+.readout small{display:block;font-size:.8rem;color:#9AA7B1;text-align:right}
+.hero figure.done .readout b{color:var(--heat)}
+.hero figure.done .readout small{color:#fff}
+@media (prefers-reduced-motion:reduce){.hero figure img{transition:none}}
+@media(max-width:900px){.readout{top:12px;inset-inline-end:12px;min-width:140px;padding:8px 12px}.readout b{font-size:1.8rem}}

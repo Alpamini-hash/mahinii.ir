@@ -50,6 +50,7 @@
   </div>
   <figure>
     <img src="images/crucible.jpg" alt="بوته‌های سرامیکی در اندازه‌های مختلف، یکی در حال گداختگی">
+    <div class="readout" aria-hidden="true"><span>دمای کوره</span><b id="temp">۲۵</b><em>°C</em><small id="tlabel">در حال گرم شدن</small></div>
     <figcaption>بوته‌های نسوز در اندازه‌های مختلف</figcaption>
   </figure>
 </div>
@@ -236,6 +237,18 @@
 </footer>
 
 <script src="site.js"></script>
+<script>
+(()=>{
+  const fig=document.querySelector(".hero figure"),el=document.getElementById("temp"),lab=document.getElementById("tlabel");
+  const T0=25,T1=1064,D=3600,fa=n=>Math.round(n).toLocaleString("fa-IR",{useGrouping:false});
+  const done=()=>{el.textContent=fa(T1);lab.textContent="دمای ذوب طلا";fig.classList.add("hot","done")};
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches){done();return}
+  requestAnimationFrame(()=>fig.classList.add("hot"));
+  let t0;const ease=x=>1-Math.pow(1-x,3);
+  const step=t=>{t0??=t;const k=Math.min((t-t0)/D,1);el.textContent=fa(T0+(T1-T0)*ease(k));k<1?requestAnimationFrame(step):done()};
+  setTimeout(()=>requestAnimationFrame(step),300);
+})();
+</script>
 <script>
 const metals=[
   {n:"قلع",t:232,c:"بوته‌ی فولادی یا رسی‌-گرافیتی",k:"کوره‌ی کوچک یا حتی هیتر صنعتی، حدود ۳۵۰ درجه"},
