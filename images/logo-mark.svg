@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="12" fill="#1E4FA3"/>
+  <!-- thick-walled crucible with pouring spout -->
+  <path d="M22 30 L19 24 L30 27 H96 Q100 27 99 31 L92 84 Q89 98 74 98 H46 Q31 98 28 84 Z" fill="#F4F6F7"/>
+  <!-- inner cavity -->
+  <path d="M36 36 H86 L80 80 Q78 87 70 87 H50 Q42 87 40 80 Z" fill="#1E4FA3"/>
+  <!-- molten metal -->
+  <path d="M38.2 52 H83.8 L80 80 Q78 87 70 87 H50 Q42 87 40 80 Z" fill="#F2B134"/>
+  <!-- heat -->
+  <path d="M42 108 h36" stroke="#F2B134" stroke-width="5" stroke-linecap="round"/>
+</svg>
